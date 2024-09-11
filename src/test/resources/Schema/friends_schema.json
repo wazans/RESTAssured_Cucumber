@@ -1,0 +1,72 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/object1722244319.json",
+  "title": "Root",
+  "type": "array",
+  "default": [],
+  "items":{
+    "$id": "#root/items",
+    "title": "Items",
+    "type": "object",
+    "required": [
+      "id",
+      "firstname",
+      "lastname",
+      "age",
+      "email"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#root/items/id",
+        "title": "Id",
+        "type": "string",
+        "default": "",
+        "examples": [
+          "1"
+        ],
+        "pattern": "^.*$"
+      },
+      "firstname": {
+        "$id": "#root/items/firstname",
+        "title": "Firstname",
+        "type": "string",
+        "default": "",
+        "examples": [
+          "John"
+        ],
+        "pattern": "^.*$"
+      },
+      "lastname": {
+        "$id": "#root/items/lastname",
+        "title": "Lastname",
+        "type": "string",
+        "default": "",
+        "examples": [
+          "Doe"
+        ],
+        "pattern": "^.*$"
+      },
+      "age": {
+        "$id": "#root/items/age",
+        "title": "Age",
+        "type": "integer",
+        "examples": [
+          30
+        ],
+        "default": 0
+      },
+      "email": {
+        "$id": "#root/items/email",
+        "title": "Email",
+        "type": "string",
+        "default": "",
+        "examples": [
+          "john.doe@example.com"
+        ],
+        "pattern": "^.*$"
+      }
+    }
+  }
+
+}

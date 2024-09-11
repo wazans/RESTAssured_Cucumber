@@ -1,4 +1,4 @@
-
+@friend
 Feature: Friends API
 
   Background:
@@ -10,10 +10,16 @@ Feature: Friends API
     And the response should contain a list of friends
 
 
-  @post
+  @post  @profile1
   Scenario: Add a new friend
     When I send a POST request to "/friends" with the body from "createFriend.json"
     Then the status code should be 201
+    Then the response should contain a list of friends
+
+
+  @post_with_pojo  @profile1
+  Scenario: Add a new friend with POJO
+    When I send a POST request with the help of JSON  to "/friends"
     Then the response should contain a list of friends
 
     #And i fail if strict is true
@@ -28,7 +34,16 @@ Feature: Friends API
       | id | email                  |
       | 2  | jane.smith@example.com |
 
+  @post_with_json_shcema
+  Scenario: Add a new friend with POJO
+    When I send a POST request with the help of JSON  to "/friends"
+    Then the response should contain first_name post_with_json_shcema to "/friends"
 
+
+  @basicAssertions
+  Scenario: Add a new friend with POJO
+    When I send a POST request with the help of JSON  to "/friends"
+    Then we perform so basic Assertions
 
   #<id> and <email> are parameters used in the Scenario Outline.
   # in step def: {int} and {string} are placeholders for the parameters id and email respectively.
